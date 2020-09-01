@@ -1,0 +1,419 @@
+/*******************/
+/*  General Style  */
+/*******************/
+::selection {
+    background-color: #212529;
+    color: #FFF;
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    color: #2e2e2e;
+    font-weight: 400;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-ily-mode {
+    background-color: #212529;
+    color: #FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    border: 2px solid #212529;
+}
+
+.btn-ily-mode:hover {
+    background-color: #FFF;
+    color: #212529;
+}
+
+.btn:focus, .btn.focus {
+    box-shadow: none;
+}
+
+h2.primary-h {
+    position: relative;
+    font-size: 1.7rem;
+}
+
+h2.primary-h span {
+    position: relative;
+    display: inline-block;
+    padding-right: 75px;
+    margin-right: 25px;
+    line-height: 1.75;
+    color: #2e2e2e;
+}
+
+h2.primary-h span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 0;
+    margin-top: -1px;
+    border-top: 2px solid #2e2e2e;
+}
+
+
+/* end of General Style */
+
+/*******************/
+/*    Icon Bar     */
+/*******************/
+.icon-bar {
+    position: fixed;
+    right: 2rem;
+    bottom: 1.5rem;
+    z-index: 99999;
+}
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    color: #212529;
+    font-size: 20px;
+  }
+
+
+/* Icon Bar */
+
+
+/*******************/
+/*     Navbar      */
+/*******************/
+.navbar {
+    transition: all 0.4s ease;
+    width: 100%;
+    position: fixed;
+    padding: 2rem 5rem;
+    z-index: 999;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #FFF;
+    margin-left: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.nav-collapse .navbar-nav .nav-link {
+    color: #2e2e2e;
+}
+
+.nav-collapse .navbar-nav .nav-link:hover , .nav-collapse .navbar-nav .nav-link:focus {
+    color: #000;
+}
+
+.nav-collapse {
+    background: white;
+    padding: 1rem 5rem;
+    box-shadow: 0px 0px 5px #ccc;
+    z-index: 9999;
+}
+
+.navbar-brand img {
+    width: 40px;
+}
+
+.navbar-toggler {
+    padding: 0;
+    font-size: 1.3rem;
+}
+
+/* end of Navbar */
+
+
+/******************/
+/*     Header     */
+/******************/
+.header {
+    background: url('../images/cover-bg.jpg');
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 10rem;
+    margin: 0 5%;
+}
+
+.header-content .hi {
+    margin-bottom: 0;
+}
+
+.header-content .first-name {
+    font-size: 7rem;
+}
+.header-content .last-name {
+    font-weight: 300;
+    letter-spacing: 1.5rem;
+}
+
+.header-content .job-name {
+    margin-top: 1rem;
+    background: #212529;
+    color: #FFF;
+    padding: 10px 15px;
+    width: 19rem;
+}
+
+
+/* end of Header*/
+
+
+/******************/
+/*     About      */
+/******************/
+.about {
+    display: flex;
+}
+
+.img-area {
+    width: 50%;
+    background: url(../images/about.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.disc-area {
+    height: 100%;
+    width: 50%;
+}
+
+.disc-area .about-infos {
+    margin: 2rem;
+}
+
+.about-infos h3 {
+    font-size: 2.5rem;
+}
+
+.about-infos h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 1.5rem;
+}
+/* .about-infos .content-info .single-info>span {
+    margin-right: 10px;
+}
+
+.content-info .single-info>p {
+    display: inline-block;
+    margin-bottom: 0;
+} */
+
+
+/* end of About Us */
+
+
+/****************************/
+/*     13. Testimonials     */
+/****************************/
+.slider-1 {
+	padding-top: 4rem;
+	padding-bottom: 5rem;
+	background-color: #f3f3f3;
+}
+
+.slider-1 .slider-container {
+	position: relative;
+}
+
+.slider-1 .swiper-container {
+	position: static;
+	width: 90%;
+	text-align: center;
+}
+
+.slider-1 .swiper-button-prev:focus,
+.slider-1 .swiper-button-next:focus {
+	/* even if you can't see it chrome you can see it on mobile device */
+	outline: none;
+}
+
+.slider-1 .swiper-button-prev {
+	left: -0.5rem;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23777b7e'%2F%3E%3C%2Fsvg%3E");
+	background-size: 1.125rem 1.75rem;
+}
+
+.slider-1 .swiper-button-next {
+	right: -0.5rem;
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2028%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23777b7e'%2F%3E%3C%2Fsvg%3E");
+	background-size: 1.125rem 1.75rem;
+}
+
+.slider-1 .card {
+	position: relative;
+	border: none;
+	background-color: transparent;
+}
+
+.slider-1 .card-image {
+	width: 90%;
+	margin-right: auto;
+	margin-bottom: 0.25rem;
+	margin-left: auto;
+}
+
+.slider-1 .card-body {
+	padding-bottom: 0;
+}
+
+
+/*******************/
+/*     Contact     */
+/*******************/
+.contact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #ced4da;
+    border-bottom: 1.5px solid #212529;
+}
+
+.contact-info {
+    padding-left: 0.5rem;
+}
+
+.contact-info ul {
+    padding: 0;
+}
+
+.contact-info li {
+    list-style: none;
+
+}
+
+.contact-info i {
+    font-size: 28px;
+    padding-right: 1.8rem;
+}
+/* end of contact */
+
+
+/*******************/
+/*   Media Query   */
+/*******************/
+/* Max With 768px */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 1rem 1rem;
+        background-color: #FFF;
+    }
+
+    .navbar-light .navbar-toggler {
+        border-color: transparent;
+        outline: none;
+    }
+
+    div#navbar6 {
+        margin-top: 1rem;
+    }
+    /* end of Navbar */
+
+    /* Header */
+    .header-content {
+        margin: 0;
+    }
+    /* end of Header */
+
+
+    /* Icon Bar */
+    .icon-bar {
+        background-color: #212529;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 11%;
+        padding-top: 15px;
+    }
+
+    .icon-bar a {
+        display: inline;
+        color: #FFF;
+    }
+    
+    .icon-bar a i {
+        width: 19%;
+    }
+    /* end of Icon Bar */
+
+    /* About */
+    .about {
+        display: block;
+    }
+
+    .img-area {
+        width: 100%;
+        height: 27rem;
+    }
+
+    .disc-area {
+        width: 100%;
+    }
+
+    .disc-area .about-infos {
+        margin: 1rem;
+    }
+    /* end of About */
+
+}
+/* end of Max With 768px */
+
+
+
+
+
+
+
+/*****************************/
+/*     18. Media Queries     */
+/*****************************/	
+/* Min-width width 768px */
+@media (min-width: 768px) {
+
+    /* Testimonials */
+	.slider-1 .swiper-button-prev {
+		left: 1rem;
+		width: 1.375rem;
+		background-size: 1.375rem 2.125rem;
+	}
+	
+	.slider-1 .swiper-button-next {
+		right: 1rem;
+		width: 1.375rem;
+		background-size: 1.375rem 2.125rem;
+	}
+	/* end of testimonials */
+}
