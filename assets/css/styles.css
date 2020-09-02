@@ -148,8 +148,9 @@ h2.primary-h span:before {
 /*     Header     */
 /******************/
 .header {
-    background: url('../images/cover-bg.jpg');
+    background: url('../images/cover-bg.jpg') no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
     position: relative;
 }
@@ -215,22 +216,13 @@ h2.primary-h span:before {
     font-weight: 400;
     margin-top: 1.5rem;
 }
-/* .about-infos .content-info .single-info>span {
-    margin-right: 10px;
-}
-
-.content-info .single-info>p {
-    display: inline-block;
-    margin-bottom: 0;
-} */
-
 
 /* end of About Us */
 
 
-/****************************/
-/*     13. Testimonials     */
-/****************************/
+/**************************/
+/*     Projects Slide     */
+/**************************/
 .slider-1 {
 	padding-top: 4rem;
 	padding-bottom: 5rem;
@@ -282,6 +274,8 @@ h2.primary-h span:before {
 	padding-bottom: 0;
 }
 
+/* Projects Slide */
+
 
 /*******************/
 /*     Contact     */
@@ -321,6 +315,30 @@ h2.primary-h span:before {
 /* end of contact */
 
 
+/*****************/
+/*   Copyright   */
+/*****************/
+
+.copyright {
+    background: #2e2e2e;
+    color: #ced4da;
+    text-align: center;
+    padding: 1.3rem;
+}
+
+.copyright p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.copyright p span {
+    font-weight: 700;
+}
+
+/* end of Copyright */
+
+
+
 /*******************/
 /*   Media Query   */
 /*******************/
@@ -337,12 +355,24 @@ h2.primary-h span:before {
         outline: none;
     }
 
+    .navbar-light .navbar-nav .nav-link {
+        color: #2e2e2e;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+        color: #000;
+    }
+
     div#navbar6 {
         margin-top: 1rem;
     }
     /* end of Navbar */
 
     /* Header */
+    .header {
+        background-position-x: 55%;
+    }
+    
     .header-content {
         margin: 0;
     }
@@ -394,16 +424,13 @@ h2.primary-h span:before {
 
 
 
-
-
-
-/*****************************/
-/*     18. Media Queries     */
-/*****************************/	
+/*************************/
+/*     Media Queries     */
+/*************************/	
 /* Min-width width 768px */
 @media (min-width: 768px) {
 
-    /* Testimonials */
+    /* Projects Slide */
 	.slider-1 .swiper-button-prev {
 		left: 1rem;
 		width: 1.375rem;
@@ -415,5 +442,5 @@ h2.primary-h span:before {
 		width: 1.375rem;
 		background-size: 1.375rem 2.125rem;
 	}
-	/* end of testimonials */
+	/* end of Projects Slide */
 }

@@ -1,4 +1,4 @@
-<?php  require "sendmail.php";?>
+<?php  require "assets/sendmail.php";?>
 <?php require_once 'admin_panel/action.php';?>
 <?php require_once 'admin_panel/jsabout.php';?>
 
@@ -41,7 +41,7 @@
         <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a> 
         <a href="<?= $twitter;  ?>" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a> 
         <a href="<?= $github;   ?>" target="_blank" class="github"><i class="fab fa-github"></i></a> 
-        <a href="<?= $linkedin; ?>" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="<?= $linked_in; ?>" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
         <a href="<?= $instagram;?>" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a> 
     </div>
     <!-- end of Icon Bar -->
@@ -129,7 +129,7 @@
     <!-- Project -->
     <div class="slider-1" id="projects">
         <div class="container">
-            <h2 class="primary-h mb-5 text-center"><span>01.</span>PROJECTS</h2>
+            <h2 class="primary-h mb-5 text-center"><span>02.</span>PROJECTS</h2>
             <div class="row">
                 <div class="col-lg-12">
 
@@ -180,7 +180,7 @@
     <!-- Contact Us -->
     <div class="contact" id="contact">
         <div class="container">
-            <h2 class="primary-h mb-5 text-center"><span>01.</span>CONTACT ME</h2>
+            <h2 class="primary-h mb-5 text-center"><span>03.</span>CONTACT ME</h2>
             <div class="row">
                 <!-- Contact form-->
                 <div class="col-12 col-lg-7">
@@ -201,7 +201,7 @@
                         </div>
                         <div class="col-12 form-submit">
                             <button class="btn btn-ily-mode" id="contact-submit" name="send_message" type="submit">SEND MESSAGE</button>
-                        <p class="contact-feedback"></p>
+                        <p class="contact-feedback"><?= $msg; ?></p>
                       </div>
                     </div>
                   </form>
@@ -241,7 +241,7 @@
                                     <th>Call Me</th>
                                   </tr>
                                   <tr>
-                                    <td><a href="tel:+212<?= $phone; ?>">+212 <?= $phone; ?></a></td>
+                                    <td><p>+212 <?= $phone; ?></p></td>
                                   </tr>
                             </table>
                         </li>
@@ -252,7 +252,7 @@
                                     <th>Email ME</th>
                                   </tr>
                                   <tr>
-                                    <td><a href="mailto:<?= $email; ?>"> <?= $email; ?> </a></td>
+                                    <td><p> <?= $email; ?> </p></td>
                                   </tr>
                             </table>
                         </li>
@@ -263,6 +263,11 @@
         </div>
     </div>
     <!-- end of Contact Us -->
+    <!-- Copyright -->
+        <!-- <div class="copyright">
+            <p>Copyright © 2020 Made by <span>Ilyass Benhadda</span> - All rights reserved</p>
+        </div> -->
+    <!-- end of Copyright -->
 
 
     <!-- Scripts -->
