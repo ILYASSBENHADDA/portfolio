@@ -12,6 +12,7 @@
 
 body {
     font-family: 'Oswald', sans-serif;
+    background-color: #A7A6AC;
 }
 
 p {
@@ -190,6 +191,7 @@ h2.primary-h span:before {
 /******************/
 .about {
     display: flex;
+    background-color: #FFF;
 }
 
 .img-area {
@@ -283,6 +285,7 @@ h2.primary-h span:before {
 .contact {
     padding-top: 3rem;
     padding-bottom: 3rem;
+    background-color: #FFF;
 }
 
 .form-control {

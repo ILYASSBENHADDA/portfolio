@@ -13,6 +13,10 @@ function scrollFunction() {
 }
 
 
+// WOW JS ANIMATION
+new WOW().init();
+
+
 (function($) {
   "use strict"; 
 

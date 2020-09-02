@@ -1,4 +1,4 @@
-<?php  require "assets/sendmail.php";?>
+<?php  require "assets/php/sendmail.php";?>
 <?php require_once 'admin_panel/action.php';?>
 <?php require_once 'admin_panel/jsabout.php';?>
 
@@ -10,25 +10,16 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
+    <meta name="author" content="Ilyass Benhadda">
 
     <!-- Website Title -->
     <title>ILYASS BENHADDA | Web Developer</title>
     
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/fontawesome-all.css" rel="stylesheet">
     <link href="assets/css/swiper.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
 	<link href="assets/css/styles.css" rel="stylesheet">
 	
 	<!-- Favicon  -->
@@ -38,11 +29,11 @@
 
     <!-- Icon Bar -->
     <div class="icon-bar">
-        <a href="<?= $facebook; ?>" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a> 
-        <a href="<?= $twitter;  ?>" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a> 
-        <a href="<?= $github;   ?>" target="_blank" class="github"><i class="fab fa-github"></i></a> 
-        <a href="<?= $linked_in; ?>" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-        <a href="<?= $instagram;?>" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a> 
+        <a href="<?= $facebook; ?>" target="_blank" class="facebook wow fadeInRight" data-wow-delay="0.3s"><i class="fab fa-facebook-f"></i></a> 
+        <a href="<?= $twitter;  ?>" target="_blank" class="twitter wow fadeInRight" data-wow-delay="0.5s"><i class="fab fa-twitter"></i></a> 
+        <a href="<?= $github;   ?>" target="_blank" class="github wow fadeInRight" data-wow-delay="0.7s"><i class="fab fa-github"></i></a> 
+        <a href="<?= $linked_in;?>" target="_blank" class="linkedin wow fadeInRight" data-wow-delay="0.9s"><i class="fab fa-linkedin-in"></i></a>
+        <a href="<?= $instagram;?>" target="_blank" class="instagram wow fadeInRight" data-wow-delay="1.1s"><i class="fab fa-instagram"></i></a> 
     </div>
     <!-- end of Icon Bar -->
 
@@ -76,14 +67,14 @@
     
 
     <!-- Header -->
-    <header class="header">
+    <header class="header wow fadeInLeft" data-wow-delay="0.3s">
         <div class="header-content">
             <div class="container">
-                <h2 class="hi">HI! I'M,</h2>
-                <h1 class="first-name">ILYASS</h1>
-                <h2 class="last-name">BENHADDA</h2>
-                <h2 class="job-name">#WEB_DEVELOPER</h2>
-                <a class="btn btn-ily-mode" href="#contact">CONTACT ME</a>
+                <h2 class="hi wow fadeInUp" data-wow-delay="0.3s">HI! I'M,</h2>
+                <h1 class="first-name wow fadeInUp" data-wow-delay="0.5s">ILYASS</h1>
+                <h2 class="last-name wow fadeInUp" data-wow-delay="0.7s">BENHADDA</h2>
+                <h2 class="job-name wow fadeInRight" data-wow-delay="0.9s">#WEB_DEVELOPER</h2>
+                <a class="btn btn-ily-mode wow fadeInLeft" data-wow-delay="1.1s" href="#contact">CONTACT ME</a>
             </div>
         </div>
     </header>
@@ -147,7 +138,7 @@
 
                                 <?php while($row=$result->fetch_assoc()) { ?>
                                 <!-- Slide -->
-                                <div class="swiper-slide">
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay="0.3s">
                                     <div class="card">
                                         <img class="card-image" src="admin_panel/<?= $row['project_image']; ?>" alt="alternative">
                                         <div class="card-body">
@@ -183,7 +174,7 @@
             <h2 class="primary-h mb-5 text-center"><span>03.</span>CONTACT ME</h2>
             <div class="row">
                 <!-- Contact form-->
-                <div class="col-12 col-lg-7">
+                <div class="col-12 col-lg-7 wow fadeInLeft" data-wow-delay="0.3s">
                   <form method="post" class="contact-form" id="contact-form" action="">
                     <h4 class="content-title">GET IN TOUCH</h4>
                     <div class="row">
@@ -201,13 +192,12 @@
                         </div>
                         <div class="col-12 form-submit">
                             <button class="btn btn-ily-mode" id="contact-submit" name="send_message" type="submit">SEND MESSAGE</button>
-                        <p class="contact-feedback"><?= $msg; ?></p>
                       </div>
                     </div>
                   </form>
                 </div>
                 <!-- Contact info-->
-                <div class="col-12 col-lg-5">
+                <div class="col-12 col-lg-5 wow fadeInRight" data-wow-delay="0.3s">
                   <div class="contact-info">
                     <h4 class="content-title">CONTACT INFOS</h4>
                     <p class="info-description">Always available for freelance work if the right project comes along, Feel free to contact me!</p>
@@ -274,6 +264,7 @@
     <script src="assets/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
     <script src="assets/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
     <script src="assets/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="assets/js/wow.min.js"></script> <!-- Wow.js Animation -->
     <script src="assets/js/scripts.js"></script>
       
 </body>
