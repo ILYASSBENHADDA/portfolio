@@ -5,7 +5,7 @@
     navbar = document.getElementById("navbar");
 function scrollFunction() {
   "use strict";
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.documentElement.scrollTop > 20) {
     navbar.classList.add('nav-collapse');
   } else {
     navbar.classList.remove('nav-collapse');
@@ -20,7 +20,6 @@ new WOW().init();
 (function($) {
   "use strict"; 
 
-  
   /* Card Slider - Swiper */
 var cardSlider = new Swiper('.card-slider', {
   autoplay: {

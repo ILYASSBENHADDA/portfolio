@@ -11,11 +11,9 @@ if(isset($_POST['add'])){
     $project_image          = $_FILES['project_image']['name'];
     $upload                 = "uploads/".$project_image;
                      
-    $query = "INSERT INTO projects (project_title, project_description, project_link, project_image) VALUES(?,?,?,?)";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("ssss",$project_title, $project_description, $project_link, $upload);
-    $stmt->execute();
+    $query = "INSERT INTO projects (project_title, project_description, project_link, project_image) VALUES('$project_title', '$project_description', '$project_link', '$upload')";
     move_uploaded_file($_FILES['project_image']['tmp_name'], $upload);
+    $result = mysqli_query($conn, $query);
     
     header('location: add-projects.php');
     $_SESSION['response']="Successfully Inserted to the database!";
@@ -28,20 +26,15 @@ if(isset($_POST['add'])){
 if(isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
-    $sql = "SELECT project_image FROM projects WHERE id=?";
-    $stmt2 = $conn->prepare($sql);
-    $stmt2->bind_param("i",$id);
-    $stmt2->execute();
-    $result2 = $stmt2->get_result();
-    $row = $result2->fetch_assoc();
+    $sql = "SELECT project_image FROM projects WHERE id='$id'";
+    $result2 = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result2);
 
     $imagepath=$row['project_image'];
     unlink($imagepath);
 
-    $query = "DELETE FROM projects WHERE id=?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("i",$id);
-    $stmt->execute();
+    $query = "DELETE FROM projects WHERE id='$id'";
+    $result = mysqli_query($conn, $query);
 
     header('location: add-projects.php');
     $_SESSION['response']="Successfully Deleted!";
@@ -59,12 +52,9 @@ $project_image          ="";
 if(isset($_GET['edit'])) {
     $id = $_GET['edit'];
 
-    $query = "SELECT * FROM projects WHERE id=?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("i",$id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $query = "SELECT * FROM projects WHERE id='$id'";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
 
     $id                     = $row['id'];
     $project_title          = $row['project_title'];
@@ -90,32 +80,10 @@ if(isset($_POST['update'])) {
     else {
         $newimage=$oldimage;
     }
-    $query="UPDATE projects SET project_title=?, project_description=?, project_link=?, project_image=? WHERE id=?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("ssssi",$project_title, $project_description, $project_link, $newimage, $id);
-    $stmt->execute();
+    $query="UPDATE projects SET project_title='$project_title', project_description='$project_description', project_link='$project_link', project_image='$newimage' WHERE id='$id'";
+    $result = mysqli_query($conn, $query);
 
     header('location: add-projects.php');
     $_SESSION['response']="Record Update Successfully!";
     $_SESSION['res_type']="success";
 }
-
-// PREVIEW
-// if(isset($_GET['view'])) {
-//     $id = $_GET['view'];
-
-//     $query = "SELECT * FROM projects WHERE id=?";
-//     $stmt = $conn->prepare($query);
-//     $stmt->bind_param("i",$id);
-//     $stmt->execute();
-//     $result = $stmt->get_result();
-//     $row = $result->fetch_assoc();
-
-//     $vid                    = $row['id'];
-//     $vprojects_name          = $row['project_title'];
-//     $vproject_description         = $row['project_description']; 
-//     $vproject_link   = $row['project_link'];
-//     $vproject_image         = $row['project_image'];
-    
-    
-// }

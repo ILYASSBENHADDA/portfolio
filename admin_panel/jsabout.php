@@ -4,10 +4,8 @@ require_once 'login/config.php';
 // EDIT infos
 
     $query = "SELECT * FROM infos WHERE id = 1";
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
 
     $first_description  = $row['first_description'];
     $second_description = $row['second_description']; 
@@ -48,49 +46,9 @@ if(isset($_POST['update'])) {
     else {
         $newfile=$oldfile;
     }
-    $query="UPDATE `infos` SET `full_name`='".$full_name."', `phone`='".$phone."', `email`='".$email."', `age`='".$age."', `my_location`='".$location."', `first_description`='".$first_description."', `second_description`='".$second_description."', `cv_file`='".$newfile."', `github`='".$github."', `facebook`='".$facebook."', `twitter`='".$twitter."', `instagram`='".$instagram."', `linkedin`='".$linked_in."' WHERE `id`=1";
 
+    $query="UPDATE infos SET full_name='$full_name', phone='$phone', email='$email', age='$age', my_location='$location', first_description='$first_description', second_description='$second_description', cv_file='$newfile', github='$github', facebook='$facebook', twitter='$twitter', instagram='$instagram', linkedin='$linked_in' WHERE id=1";
     $result = mysqli_query($conn, $query);
 
-
 }
-    //     if($result) {
-//         echo 'Data Updated';
-//     }
-//     else{
-//         echo 'Data Not Updated';
-//     }
-//     echo $linked_in;
-    
-//    mysqli_close($conn);
 
-
-
-
-    
-    
-    // $stmt = $conn->prepare($query);
-    // $stmt->bind_param("sissssssssssi",$full_name, $phone, $email, $location, $first_description, $second_description, $newfile, $github, $facebook, $twitter, $instagram, $linked_in, $id);
-    // $stmt->execute();
-
-    
-    // $query_run = mysqli_query($conn, $query);
-
-//$query = "UPDATE `users` SET `fname`='".$fname."',`lname`='".$lname."',`age`= $age WHERE `id` = $id";
-
-    // $stmt = $conn->prepare($query);
-    // $stmt->bind_param("sissssssssss",$full_name, $phone, $email, $location, $first_descriptionx, $second_description, $newfile, $github, $facebook, $twitter, $instagram, $linked_in);
-    
-    
-    // $query="UPDATE infos SET full_name='?', phone='?', email='?', my_location='?', first_description='?', second_description='?', cv_file='?' github='?', facebook='?', twitter='?', instagram='?', linkedin='?'";
-    // $stmt = $conn->prepare($query);
-    // $stmt->bind_param("sissssssssss",$full_name, $phone, $email, $location, $first_descriptionx, $second_description, $newfile, $github, $facebook, $twitter, $instagram, $linked_in);
-    // $stmt->execute();
-
-    // if (mysqli_query($conn, $query)) {
-    //     echo "Record updated successfully";
-    //   } else {
-    //     echo "Error updating record: " . mysqli_error($conn);
-    //   }
-      
-    //   mysqli_close($conn);

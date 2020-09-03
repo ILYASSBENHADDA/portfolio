@@ -14,7 +14,7 @@
         <?php } unset($_SESSION['response']);?>
     <!--- end of Alert ---->
 
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-12 col-lg-4">
                 <!-------- FORM --------->
@@ -23,20 +23,20 @@
                 <input type="hidden" name="id" value="<?= $id; ?>">
                     <div class="form-group">
                         <label for="project_title">Project Title</label>
-                        <input type="text" class="form-control" id="project_title" name="project_title" value="<?= $project_title; ?>">
+                        <input type="text" class="form-control" id="project_title" name="project_title" value="<?= $project_title; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="project_description">Project Description</label>
-                        <textarea class="form-control" id="project_description" name="project_description" rows="5"> <?= $project_description; ?> </textarea>
+                        <textarea class="form-control" id="project_description" name="project_description" rows="5" required> <?= $project_description; ?> </textarea>
                     </div>
                     <div class="form-group">
                         <label for="project_link">Review Link</label>
-                        <input type="text" class="form-control" id="project_link" name="project_link" value="<?= $project_link; ?>">
+                        <input type="text" class="form-control" id="project_link" name="project_link" value="<?= $project_link; ?>" required>
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="oldimage" value="<?= $project_image; ?>">
                         <label for="project_image">Image Example</label>
-                        <input type="file" class="form-control-file" name="project_image" id="project_image">
+                        <input type="file" class="form-control-file" name="project_image" id="project_image" required>
                         <img src="<?= $project_image; ?>" width="120" class="img-thumbnail">
                     </div>
                     <div class="form-submit">
@@ -53,9 +53,7 @@
                 <!-- TABLE -->
                 <?php
                     $query = "SELECT * FROM projects";	
-                    $stmt = $conn->prepare($query);
-                    $stmt->execute();
-                    $result = $stmt->get_result();
+                    $result = mysqli_query($conn, $query);
                 ?>
 
                 <h2 class="text-center">Records in Database</h2>
@@ -73,7 +71,7 @@
                     </thead>
 
                     <tbody>
-                        <?php while($row=$result->fetch_assoc()) { ?>
+                        <?php while($row = mysqli_fetch_assoc($result)) { ?>
                         <tr>
                             <th scope="row"><?= $row['id']; ?></th>
                             <td><?= $row['project_title']; ?></td>
@@ -82,9 +80,8 @@
                             <td><?= $row['project_link']; ?></td>
                             <td><?= $row['project_date']; ?></td>
                             <td>
-                                <a href="view.php?view=<?= $row['id']; ?>" class="badge badge-primary">View</a> |
-                                <a href="action.php?delete=<?= $row['id']; ?>" onclick="return confirm('Do you want delete this product?')" class="badge badge-primary">Delete</a> |
-                                <a href="add-projects.php?edit=<?= $row['id']; ?>" class="badge badge-primary">Edit</a> 
+                                <a href="action.php?delete=<?= $row['id']; ?>" onclick="return confirm('Do you want delete this product?')" class="badge badge-danger">Delete</a>
+                                <a href="add-projects.php?edit=<?= $row['id']; ?>" class="badge badge-success">Edit</a> 
                             </td>
                         </tr>
                     <?php } ?> 

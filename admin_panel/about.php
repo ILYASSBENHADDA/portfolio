@@ -7,31 +7,6 @@
 <div class="about-infos">
     <div class="container mb-5">
         <form action="" method="post" enctype="multipart/form-data">
-            <!-- Description About -->
-            <h2 class="mt-5">Information</h2>
-            <hr>
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="form-group">
-                        <label for="my_desc">Description</label>
-                        <textarea class="form-control" id="my_desc" name="my_desc" rows="5"> <?= $first_description; ?> </textarea>
-                    </div>  
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="form-group">
-                        <label for="quick_desc">Quick Description</label>
-                        <textarea class="form-control" id="quick_desc" name="quick_desc" rows="5"> <?= $second_description; ?> </textarea>
-                    </div> 
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="hidden" name="oldfile" value="<?= $cv; ?>">
-                <label for="cv">CV file</label>
-                <input type="file" class="form-control-file" id="cv" name="cv">
-                <a type="hidden" src="<?= $cv; ?>"></a>
-            </div>
-            <!-- end of Description About -->
-
             <!-- Infos About -->
             <h2 class="mt-5">Infos About</h2>
             <hr>
@@ -68,6 +43,31 @@
                 </div>
             </div>
             <!-- end of Infos About -->
+
+            <!-- Description About -->
+            <h2 class="mt-5">Information</h2>
+            <hr>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="form-group">
+                        <label for="my_desc">Description</label>
+                        <textarea class="form-control" id="my_desc" name="my_desc" rows="5"> <?= $first_description; ?> </textarea>
+                    </div>  
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="form-group">
+                        <label for="quick_desc">Quick Description</label>
+                        <textarea class="form-control" id="quick_desc" name="quick_desc" rows="5"> <?= $second_description; ?> </textarea>
+                    </div> 
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="oldfile" value="<?= $cv; ?>">
+                <label for="cv">CV file</label>
+                <input type="file" class="form-control-file" id="cv" name="cv">
+                <a type="hidden" src="<?= $cv; ?>"></a>
+            </div>
+            <!-- end of Description About -->
 
             <!-- Social Media -->
             <h2 class="mt-5">Social Media links</h2>
