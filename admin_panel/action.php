@@ -80,6 +80,7 @@ if(isset($_POST['update'])) {
     else {
         $newimage=$oldimage;
     }
+    
     $query="UPDATE projects SET project_title='$project_title', project_description='$project_description', project_link='$project_link', project_image='$newimage' WHERE id='$id'";
     $result = mysqli_query($conn, $query);
 

@@ -6,7 +6,7 @@
 <div class="projects">
     <!--- Alert ---->
     <?php if(isset($_SESSION['response'])) { ?>
-        <div class="alert alert-<?= $_SESSION['res_type']; ?> alert-dismissible text-center">
+        <div class="alert alert-<?= $_SESSION['res_type']; ?> alert-dismissible text-center mx-5">
           <?php $_SESSION['response'];?>
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <?= $_SESSION['response'];?>
