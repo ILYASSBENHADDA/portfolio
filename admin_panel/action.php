@@ -1,6 +1,7 @@
 <?php
-session_start();
 require_once 'login/config.php';
+if(!session_id()) session_start();
+
 
 // ADD projects
 

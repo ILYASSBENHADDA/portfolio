@@ -206,7 +206,7 @@ h2.primary-h span:before {
 }
 
 .disc-area .about-infos {
-    margin: 2rem;
+    padding: 2rem;
 }
 
 .about-infos h3 {
@@ -417,9 +417,15 @@ h2.primary-h span:before {
     }
 
     .disc-area .about-infos {
-        margin: 1rem;
+        padding: 1rem;
     }
     /* end of About */
+
+    /* Contact */
+    .contact .contact-info {
+        padding-top: 2rem;
+    }
+    /* end of Contact */
 
 }
 /* end of Max With 768px */

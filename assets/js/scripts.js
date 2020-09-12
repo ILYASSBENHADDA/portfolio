@@ -1,26 +1,24 @@
 
 /* Navbar Scripts */
 	// JS to collapse the navbar on scroll
-    window.onscroll = function() {scrollFunction()};
-    navbar = document.getElementById("navbar");
-function scrollFunction() {
-  "use strict";
-  if (document.documentElement.scrollTop > 20) {
-    navbar.classList.add('nav-collapse');
-  } else {
-    navbar.classList.remove('nav-collapse');
-  }
-}
+  navbar = document.getElementById("navbar");
+    function scrollFunction() {
+      "use strict";
+      if (document.documentElement.scrollTop > 20) {
+        navbar.classList.add('nav-collapse');
+      } else {
+        navbar.classList.remove('nav-collapse');
+      }
+    }
+  // To Execute function
+  window.onscroll = function() {scrollFunction()};
 
 
-// WOW JS ANIMATION
+/* WOW.JS Animation */
 new WOW().init();
 
 
-(function($) {
-  "use strict"; 
-
-  /* Card Slider - Swiper */
+/* Card Slider - Swiper */
 var cardSlider = new Swiper('.card-slider', {
   autoplay: {
           delay: 4000,
@@ -44,6 +42,3 @@ var cardSlider = new Swiper('.card-slider', {
           } 
       }
   });
-
-
-})(jQuery);

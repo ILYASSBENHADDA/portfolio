@@ -86,14 +86,14 @@
         <div class="img-area"></div>
         <div class="disc-area">
             <div class="about-infos">
-                <h2 class="primary-h"><span>01.</span>ABOUT</h2>
-                <h3>Who Am I?</h3>
+                <h2 class="primary-h wow fadeInUp" data-wow-delay="0.3s"><span>01.</span>ABOUT</h2>
+                <h3 class="wow fadeInUp" data-wow-delay="0.5s">Who Am I?</h3>
             <!-- <h2>I'm Ilyass Benhadda, a visual UX/UI Designer and Web Developer</h2> -->
-            <h2><?= $second_description; ?></h2>
-            <p><?= $first_description; ?></p>
+            <h2 class="wow fadeInUp" data-wow-delay="0.7s"><?= $second_description; ?></h2>
+            <p class="wow fadeInUp" data-wow-delay="0.9s"><?= $first_description; ?></p>
             <hr>
             <address class="content-info">
-                <div class="row">
+                <div class="row wow fadeInUp" data-wow-delay="0.3s">
                   <div class="col-12 col-md-6 single-info"><span>Name:</span>
                     <p><?= $full_name; ?></p>
                   </div>
@@ -101,7 +101,7 @@
                     <p><a href="mailto:<?= $email; ?>"><?= $email; ?></a></p>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row wow fadeInUp" data-wow-delay="0.5s">
                   <div class="col-12 col-md-6 single-info"><span>Age:</span>
                     <p><?= $age; ?></p>
                   </div>
@@ -110,7 +110,7 @@
                   </div>
                 </div>
             </address>
-            <a class="btn btn-ily-mode" href="admin_panel/<?= $cv; ?>" download> DOWNLOAD CV </a>
+            <a class="btn btn-ily-mode wow fadeInLeft" data-wow-delay="0.7s" href="admin_panel/<?= $cv; ?>" download> DOWNLOAD CV </a>
             </div>
         </div>
     </div>

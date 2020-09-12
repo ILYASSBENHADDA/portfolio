@@ -9,7 +9,7 @@
             <!-- Add Projects -->
             <a href="add-projects.php">
                 <div class="add-projects grid-sec">
-                    <h2>Add a New Project</h2>
+                    <h2>Manage Projects</h2>
                     <div class="icon">
                         <i class="fas fa-plus"></i>
                     </div>

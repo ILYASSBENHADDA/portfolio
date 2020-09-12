@@ -1,9 +1,9 @@
 <?php
 require_once 'login/config.php';
 
-// EDIT infos
+// Show values table infos on inputs
 
-    $query = "SELECT * FROM infos WHERE id = 1";
+    $query = "SELECT * FROM infos";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
 
@@ -21,6 +21,8 @@ require_once 'login/config.php';
     $linked_in          = $row['linkedin'];
     $cv                 = $row['cv_file'];
 
+
+// Update records
 
 if(isset($_POST['update'])) {
     $first_description  = $_POST['my_desc'];
@@ -47,8 +49,12 @@ if(isset($_POST['update'])) {
         $newfile=$oldfile;
     }
 
-    $query="UPDATE infos SET full_name='$full_name', phone='$phone', email='$email', age='$age', my_location='$location', first_description='$first_description', second_description='$second_description', cv_file='$newfile', github='$github', facebook='$facebook', twitter='$twitter', instagram='$instagram', linkedin='$linked_in' WHERE id=1";
-    $result = mysqli_query($conn, $query);
-
+    $query="UPDATE infos SET full_name='$full_name', phone='$phone', email='$email', age='$age', my_location='$location', first_description='$first_description', second_description='$second_description', cv_file='$newfile', github='$github', facebook='$facebook', twitter='$twitter', instagram='$instagram', linkedin='$linked_in'";
+    if($result = mysqli_query($conn, $query)){
+        echo "<script>alert('Data Update Successfully!')</script>";
+    }
+    else {
+        echo "<script>alert('Something Wrong?!')</script>";
+    }
 }
 

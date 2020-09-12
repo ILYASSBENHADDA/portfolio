@@ -11,5 +11,10 @@ if(isset($_POST['send_message'])){
     $body .= "\r\n" . "From: " . $email;
     $body .= "\r\n" . "Name: " . $name;
  
-    mail($to, $subject, $body);
+    if(mail($to, $subject, $body)) {
+        echo "<script>alert('Your message was sent successfully!')</script>";
+    }
+    else {
+        echo "<script>alert('Something Wrong!')</script>";
+    }
 }

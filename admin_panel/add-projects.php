@@ -14,7 +14,7 @@
         <?php } unset($_SESSION['response']);?>
     <!--- end of Alert ---->
 
-    <div class="container mb-5">
+    <div class="container my-5">
         <div class="row">
             <div class="col-12 col-lg-4">
                 <!-------- FORM --------->
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <input type="hidden" name="oldimage" value="<?= $project_image; ?>">
                         <label for="project_image">Image Example</label>
-                        <input type="file" class="form-control-file" name="project_image" id="project_image" required>
+                        <input type="file" class="form-control-file" name="project_image" id="project_image">
                         <img src="<?= $project_image; ?>" width="120" class="img-thumbnail">
                     </div>
                     <div class="form-submit">
